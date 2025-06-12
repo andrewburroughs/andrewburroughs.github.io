@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handheld Diagnostics Tool - My Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light gray background */
+            color: #333; /* Dark gray text */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Site Title/Logo -->
+            <a href="../index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">My Portfolio</a>
+
+            <!-- Navigation Links -->
+            <div class="space-x-4">
+                <a href="../index.html#home" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Home</a>
+                <a href="../projects.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                <a href="../blog.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Blog</a>
+                <a href="../index.html#about" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area - Project Detail Page -->
+    <main class="flex-grow container mx-auto p-8">
+        <section class="py-16 bg-white rounded-xl shadow-lg">
+            <h1 class="text-5xl font-extrabold text-center mb-6 text-gray-900">Handheld Diagnostics Tool</h1>
+            <p class="text-center text-lg text-gray-600 mb-10">A handheld diagnostics tool that allows users to directly control the robot and run diagnostics without a network connection.</p>
+
+            <div class="max-w-4xl mx-auto px-4">
+                <!-- Project Image/Demo -->
+                <div class="swiper w-[600px] h-auto rounded-lg shadow-md mb-8">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="../images/Diag_Front.JPG" class="w-[350px] h-[700px] object-cover rounded-lg mx-auto" alt="Diagnostics Tool Front" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/Diag_Back.JPG" class="w-[450px] h-[700px] object-cover rounded-lg mx-auto" alt="Diagnostics Tool Back" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/Diag_Controls.jpeg" class="w-full h-[700px] object-cover rounded-lg mx-auto" alt="Diagnostics Controls" />
+                        </div>
+                        <div class="swiper-slide">
+                            <video controls class="w-full h-[700px] object-contain rounded-lg">
+                                <source src="../images/Diag_Video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Optional Controls -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Overview</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    This project was developed for the Arkansas Razorbotz robot, which competes in the NASA Lunabotics competition. The goal of the competition was to create a robot that
+                    can build berms in a simulated lunar environment. To help add to the more realistic conditions, the pilots of the robots are placed in a mission control area that is 
+                    isolated from the competition arena. The team members that carry the robot into the arena must perform any last minute inspections and tasks that are needed during the 
+                    five minute setup phase, before they must leave the arena. However, the computers onboard the robot take an average of 1.5 minutes to boot up and connect to the network,
+                    which leaves very little time to successfully identify and rectify any issues with the robot. This was especially apparent last year when one of the linear actuators on
+                    our bucket failed and we were unable to identify the issue before the competition run. 
+                </p>
+
+                <img src="../images/Robot_2024.png">
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    To solve this time issue and to allow users to control the robot without needing to boot the computer, I created a handheld diagnostics tool. This device uses an ESP32-S3 Touch,
+                    which has a CAN transceiver built into it, to communicate with the motor controllers. The tool is able to control the three systems on the robot, drive train, excavation arm, and
+                    excavation bucket, as well as read all of the telemetry data being transmitted by the motor controllers. I built the interface using the lvgl library, which is the Light and Versatile
+                    Graphics Library, as well as C to create the functionality.
+                </p>
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Before this project, I had never used any CAD software to design anything. To create the outer housing for the tool, I learned how to use Fusion360 and designed around a model of the
+                    ESP32 and the 18650 battery I used to power the device. The tolerances were nearly perfect, with the ESP sliding and locking into place.
+                </p>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Technologies Used</h2>
+                <ul class="list-disc list-inside text-lg text-gray-700 mb-6">
+                    <li>Frontend: lvgl</li>
+                    <li>Backend: C</li>
+                    <li>Controller: Waveshare ESP32-S3 Touch</li>
+                </ul>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Key Features</h2>
+                <ul class="list-disc list-inside text-lg text-gray-700 mb-6">
+                    <li>Control robot using CAN interface</li>
+                    <li>Runs diagnostics to identify motor issues</li>
+                    <li>Real-time data parsing and display</li>
+                    <li>Graphs motor data</li>
+                    <li>Designed and printed outer housing</li>
+                </ul>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Challenges & Solutions</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                   One of the main challenges of this project was creating the CAN messages that were needed to control the motor controllers. We use the TalonSRX and TalonFX motor controllers for our motors,
+                   which are made by Cross The Road Electronics. CTRE maintained a few old GitHubs that contained very old firmware that served as a good starting point for reverse engineering their CAN messages,
+                   but they refused to provide any additional information about their API due to IP theft concerns. To solve this, I sent known speed values to the motors and capture the messages using the candump
+                   utility on Linux. I was able to reverse engineer the output to get the motors running at the correct speeds, as well as parsing the returning data to decode the information contained.
+                </p>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Outcome</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    The Handheld Diagnostics Tool was successfully able to control the robot and run local diagnostics on the robot to identify motor issues. This cut the time needed to begin diagnosing motor issues 
+                    from a minimum of 100 seconds to below 1 second. The controls were intiuitve enough fo children to use them easily and the ground crew members all had high praise for the ease of use and utility of
+                    the tool.
+                </p>
+
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-300 transition-colors duration-300 shadow-md">GitHub Repository</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 shadow-inner">
+        <div class="container mx-auto">
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.linkedin.com/in/andrew-burroughs114/" class="text-gray-400 hover:text-white transition-colors duration-300">LinkedIn</a>
+                <a href="https://github.com/andrewburroughs" class="text-gray-400 hover:text-white transition-colors duration-300">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio - Projects</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light gray background */
+            color: #333; /* Dark gray text */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Site Title/Logo -->
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">My Portfolio</a>
+
+            <!-- Navigation Links -->
+            <div class="space-x-4">
+                <a href="index.html#home" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Home</a>
+                <a href="projects.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                <a href="blog.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Blog</a>
+                <a href="about.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area - Projects Page -->
+    <main class="flex-grow container mx-auto p-8">
+        <section class="py-16 bg-white rounded-xl shadow-lg">
+            <h1 class="text-4xl font-bold text-center mb-10 text-gray-900">My Projects</h1>
+            <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+                Explore a selection of my work, ranging from web applications to data analysis tools. Each project showcases my skills in various technologies and problem-solving approaches.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/Diag_Front.jpg" alt="Diagnostics Controller" class="rounded-lg mb-4 w-[200px] h-[300px] mx-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Handheld Diagnostics Tool</h3>
+                    <p class="text-gray-600 mb-4">A handheld diagnostics tool that allows users to directly control the robot and run diagnostics without a network connection.</p>
+                    <a href="projects/diagnostics_tool.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">View Demo</a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x250/FEE2E2/EF4444?text=Project+2" alt="Project 2 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Robotics GUI</h3>
+                    <p class="text-gray-600 mb-4">A robust RESTful API developed with Node.js and Express, supporting user authentication, product management, and order processing.</p>
+                    <a href="projects/gui.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">GitHub Repo</a>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x250/D1FAE5/10B981?text=Project+3" alt="Project 3 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">PCBs</h3>
+                    <p class="text-gray-600 mb-4">A Python-based machine learning model for predictive analysis in the financial sector, utilizing scikit-learn and pandas.</p>
+                    <a href="projects/pcbs.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">Case Study</a>
+                </div>
+
+                <!-- Add more project cards here as needed -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x250/DBEAFE/1D4ED8?text=Project+4" alt="Project 4 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Botnet Lab</h3>
+                    <p class="text-gray-600 mb-4">A simple browser-based game developed using vanilla JavaScript, focusing on engaging user interaction and smooth animations.</p>
+                    <a href="projects/botnet.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">Play Game</a>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x250/FCE7F3/BE185D?text=Project+5" alt="Project 5 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Robotic Path Planning</h3>
+                    <p class="text-gray-600 mb-4">UI/UX design prototype for a mobile application, focusing on intuitive navigation and a clean, modern aesthetic using Figma.</p>
+                    <a href="projects/robot.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">View Designs</a>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x250/ECFDF5/059669?text=Project+6" alt="Project 6 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Tablet Diagnostics Tool</h3>
+                    <p class="text-gray-600 mb-4">Scripts and configurations for automating cloud resource deployment and management on AWS using Terraform and Ansible.</p>
+                    <a href="projects/tablet_diagnostics.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">Explore Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 shadow-inner">
+        <div class="container mx-auto">
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.linkedin.com/in/andrew-burroughs114/" class="text-gray-400 hover:text-white transition-colors duration-300">LinkedIn</a>
+                <a href="https://github.com/andrewburroughs" class="text-gray-400 hover:text-white transition-colors duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

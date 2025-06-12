@@ -1,1 +1,116 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Site Title/Logo -->
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">My Portfolio</a>
+
+            <!-- Navigation Links -->
+            <div class="space-x-4">
+                <a href="index.html#home" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Home</a>
+                <a href="projects.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                <a href="blog.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Blog</a>
+                <a href="about.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto p-8">
+        <!-- Home Section -->
+        <section id="home" class="mb-12 py-16 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center">
+            <h1 class="text-5xl font-extrabold mb-4 text-gray-900">Welcome to My Portfolio</h1>
+            <p class="text-lg text-gray-700 max-w-2xl mb-8">
+                Hello! I'm excited to share my work and thoughts with you. Here, you'll find a collection of my projects and insights from my blog.
+            </p>
+            <div class="flex space-x-4">
+                <a href="project.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md">View Projects</a>
+                <a href="blog.html" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-300 transition-colors duration-300 shadow-md">Read My Blog</a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-12 py-16 bg-white rounded-xl shadow-lg">
+            <h2 class="text-4xl font-bold text-center mb-10 text-gray-900">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/Diag_Front.jpg" alt="Diagnostics Controller" class="rounded-lg mb-4 w-[200px] h-[300px] mx-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Handheld Diagnostics Tool</h3>
+                    <p class="text-gray-600 mb-4">A handheld diagnostics tool that allows users to directly control the robot and run diagnostics without a network connection.</p>
+                    <a href="projects/diagnostics_tool.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">View Demo</a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x250/FEE2E2/EF4444?text=Project+2" alt="Project 2 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Project Title Two</h3>
+                    <p class="text-gray-600 mb-4">Another project description, focusing on its impact and key features. This is a placeholder text.</p>
+                    <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">Learn More</a>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x250/D1FAE5/10B981?text=Project+3" alt="Project 3 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Project Title Three</h3>
+                    <p class="text-gray-600 mb-4">A third project description, explaining the problem it solves. This is a placeholder text.</p>
+                    <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 text-sm">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-16 bg-white rounded-xl shadow-lg">
+            <h2 class="text-4xl font-bold text-center mb-10 text-gray-900">My Blog</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+                <!-- Blog Post 1 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">First Blog Post Title</h3>
+                    <p class="text-gray-600 text-sm mb-3">Published on: May 20, 2025</p>
+                    <p class="text-gray-700 mb-4">This is the introductory paragraph of your first blog post. It gives a quick overview of the topic discussed.</p>
+                    <a href="#" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm">Read More</a>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Second Blog Post Title</h3>
+                    <p class="text-gray-600 text-sm mb-3">Published on: April 10, 2025</p>
+                    <p class="text-gray-700 mb-4">Here's a brief summary of your second blog post, enticing readers to click and learn more about the subject matter.</p>
+                    <a href="#" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm">Read More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 shadow-inner">
+        <div class="container mx-auto">
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.linkedin.com/in/andrew-burroughs114/" class="text-gray-400 hover:text-white transition-colors duration-300">LinkedIn</a>
+                <a href="https://github.com/andrewburroughs" class="text-gray-400 hover:text-white transition-colors duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title - My Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; 
+            color: #333;  
+        }
+        .blog-content h2 {
+            font-size: 1.75rem; /* 28px */
+            font-weight: 600; /* semibold */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1a202c; /* gray-900 */
+        }
+        .blog-content h3 {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 500; /* medium */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #2d3748; /* gray-800 */
+        }
+        .blog-content p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .blog-content ul, .blog-content ol {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+            padding-left: 1.25rem;  
+        }
+        .blog-content ul {
+            list-style-type: disc;
+        }
+        .blog-content ol {
+            list-style-type: decimal;
+        }
+        .blog-content pre {
+            background-color: #e2e8f0; /* gray-200 */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .blog-content code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            background-color: #edf2f7; /* gray-100 */
+            padding: 0.2em 0.4em;
+            border-radius: 0.25rem;
+        }
+        .blog-content a {
+            color: #4F46E5; /* indigo-600 */
+            text-decoration: underline;
+        }
+        .blog-content blockquote {
+            border-left: 4px solid #4F46E5; /* indigo-600 */
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #4a5568; /* gray-700 */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Site Title/Logo -->
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">My Portfolio</a>
+
+            <!-- Navigation Links -->
+            <div class="space-x-4">
+                <a href="index.html#home" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Home</a>
+                <a href="projects.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                <a href="blog.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Blog</a>
+                <a href="index.html#about" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area - Blog Post Page -->
+    <main class="flex-grow container mx-auto p-8">
+        <section class="py-16 bg-white rounded-xl shadow-lg">
+            <article class="max-w-4xl mx-auto px-4">
+                <h1 class="text-5xl font-extrabold text-center mb-4 text-gray-900">Understanding Asynchronous JavaScript</h1>
+                <p class="text-center text-gray-600 text-sm mb-8">
+                    Published on: <time datetime="2025-06-05">June 5, 2025</time> by <span class="font-semibold">[Your Name]</span>
+                </p>
+
+                <div class="blog-content text-lg text-gray-700 leading-relaxed">
+                    <p>
+                        Asynchronous JavaScript is a fundamental concept for modern web development, allowing you to perform long-running operations without blocking the main thread of execution. This is crucial for maintaining a responsive user interface, especially when dealing with network requests, file I/O, or complex computations.
+                    </p>
+
+                    <p>
+                        Historically, callbacks were the primary way to handle asynchronous code. While effective, they often led to what's known as "callback hell" or "pyramid of doom," making code hard to read and maintain.
+                    </p>
+
+                    <h2>The Rise of Promises</h2>
+                    <p>
+                        **Promises** introduced a cleaner, more structured way to manage asynchronous operations. A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+                    </p>
+                    <pre><code>
+const fetchData = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const success = true; // Simulate success or failure
+            if (success) {
+                resolve("Data fetched successfully!");
+            } else {
+                reject("Failed to fetch data.");
+            }
+        }, 2000);
+    });
+};
+
+fetchData()
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+                    </code></pre>
+                    <p>
+                        Promises allow for chaining operations, making the flow of asynchronous code much more readable and manageable compared to nested callbacks.
+                    </p>
+
+                    <h2>Simplifying with Async/Await</h2>
+                    <p>
+                        The introduction of **async/await** in ES2017 provided an even more elegant way to write asynchronous code, making it look and behave more like synchronous code. An `async` function implicitly returns a Promise, and the `await` keyword can only be used inside an `async` function to pause its execution until a Promise settles.
+                    </p>
+                    <pre><code>
+async function getData() {
+    try {
+        const response = await fetchData();
+        console.log(response);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+getData();
+                    </code></pre>
+                    <p>
+                        This approach greatly improves readability and error handling with `try...catch` blocks.
+                    </p>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        Mastering asynchronous JavaScript is essential for building responsive and efficient web applications. While callbacks laid the groundwork, Promises and especially async/await have significantly enhanced the developer experience, making asynchronous patterns easier to understand and implement. Choose the method that best suits your project's complexity and your team's familiarity.
+                    </p>
+
+                    <blockquote>
+                        "Asynchronous programming is about allowing different parts of a program to run independently, without waiting for each other, which can significantly improve performance and user experience."
+                    </blockquote>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 shadow-inner">
+        <div class="container mx-auto">
+            <p>&copy; 2025 My Professional Portfolio. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.linkedin.com/in/andrew-burroughs114/" class="text-gray-400 hover:text-white transition-colors duration-300">LinkedIn</a>
+                <a href="https://github.com/andrewburroughs" class="text-gray-400 hover:text-white transition-colors duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

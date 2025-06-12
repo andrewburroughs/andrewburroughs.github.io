@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio - Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; 
+            color: #333;  
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Site Title/Logo -->
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">My Portfolio</a>
+
+            <!-- Navigation Links -->
+            <div class="space-x-4">
+                <a href="index.html#home" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Home</a>
+                <a href="projects.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                <a href="blog.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Blog</a>
+                <a href="index.html#about" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area - Blog Page -->
+    <main class="flex-grow container mx-auto p-8">
+        <section class="py-16 bg-white rounded-xl shadow-lg">
+            <h1 class="text-4xl font-bold text-center mb-10 text-gray-900">My Blog Posts</h1>
+            <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+                Here you'll find blog posts about various topics. I will discuss various topics that aren't in depth enough to warrent their own project post, go more in depth about the history and 
+                background of projects, as well as cover other topics that catch my attention. 
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+                <!-- Blog Post 1 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Handheld Diagnostics Tool</h3>
+                    <p class="text-gray-600 text-sm mb-3">Published on: June 12, 2025</p>
+                    <p class="text-gray-700 mb-4">Detailing the history behind and need for a handheld diagnostics tool for our robot.</p>
+                    <a href="blogs/diagnostics_blog.html" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm">Read Full Post</a>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Improving Diagnostics Tool Deisgn</h3>
+                    <p class="text-gray-600 text-sm mb-3">Published on: June 20, 2025</p>
+                    <p class="text-gray-700 mb-4">A beginner's guide to setting up and using Tailwind CSS for rapid UI development, focusing on its utility-first approach.</p>
+                    <a href="blogs/diagnostics_update_blog.html" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm">Read Full Post</a>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Improving the GUI - Custom Configs</h3>
+                    <p class="text-gray-600 text-sm mb-3">Published on: April 15, 2025</p>
+                    <p class="text-gray-700 mb-4">Exploring why unit testing is crucial for maintaining code quality, reducing bugs, and accelerating development cycles.</p>
+                    <a href="#" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm">Read Full Post</a>
+                </div>
+
+                <!-- Add more blog posts here as needed -->
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Adding AES to Meshtastic</h3>
+                    <p class="text-gray-600 text-sm mb-3">Published on: March 1, 2025</p>
+                    <p class="text-gray-700 mb-4">A personal reflection on learning and adapting to cloud technologies like AWS, Azure, and Google Cloud Platform.</p>
+                    <a href="#" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm">Read Full Post</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 shadow-inner">
+        <div class="container mx-auto">
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.linkedin.com/in/andrew-burroughs114/" class="text-gray-400 hover:text-white transition-colors duration-300">LinkedIn</a>
+                <a href="https://github.com/andrewburroughs" class="text-gray-400 hover:text-white transition-colors duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

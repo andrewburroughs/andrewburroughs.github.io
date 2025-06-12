@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - My Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light gray background */
+            color: #333; /* Dark gray text */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Site Title/Logo -->
+            <a href="../index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">My Portfolio</a>
+
+            <!-- Navigation Links -->
+            <div class="space-x-4">
+                <a href="../index.html#home" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Home</a>
+                <a href="../projects.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                <a href="../blog.html" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">Blog</a>
+                <a href="../index.html#about" class="rounded-md px-3 py-2 hover:bg-gray-700 transition-colors duration-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area - Project Detail Page -->
+    <main class="flex-grow container mx-auto p-8">
+        <section class="py-16 bg-white rounded-xl shadow-lg">
+            <h1 class="text-5xl font-extrabold text-center mb-6 text-gray-900">Dynamic Dashboard Project</h1>
+            <p class="text-center text-lg text-gray-600 mb-10">A real-time data visualization tool for business analytics.</p>
+
+            <div class="max-w-4xl mx-auto px-4">
+                <!-- Project Image/Demo -->
+                <img src="https://placehold.co/800x450/E0E7FF/4F46E5?text=Project+Demo" alt="Project Demo Image" class="rounded-lg shadow-md mb-8 w-full h-auto">
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Overview</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    This project involved creating a dynamic dashboard application designed to provide real-time insights into various business metrics. It was built to help stakeholders make data-driven decisions quickly and efficiently. The dashboard features interactive charts, customizable data ranges, and a user-friendly interface.
+                </p>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Technologies Used</h2>
+                <ul class="list-disc list-inside text-lg text-gray-700 mb-6">
+                    <li>**Frontend:** React.js, Tailwind CSS, D3.js for data visualization</li>
+                    <li>**Backend:** Node.js, Express.js</li>
+                    <li>**Database:** MongoDB</li>
+                    <li>**Deployment:** Heroku</li>
+                </ul>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Key Features</h2>
+                <ul class="list-disc list-inside text-lg text-gray-700 mb-6">
+                    <li>Real-time data fetching and updates</li>
+                    <li>Interactive charts (line, bar, pie) with filtering capabilities</li>
+                    <li>Responsive design for various devices</li>
+                    <li>User authentication and role-based access control</li>
+                    <li>Export data functionality (CSV, PDF)</li>
+                </ul>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Challenges & Solutions</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    One of the main challenges was optimizing data fetching and rendering for large datasets to ensure smooth performance. We addressed this by implementing lazy loading for data, optimizing database queries, and using D3.js's efficient rendering mechanisms. Another challenge was ensuring cross-browser compatibility for the interactive elements, which was resolved through careful testing and polyfills where necessary.
+                </p>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Outcome</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    The Dynamic Dashboard successfully streamlined the reporting process, reducing the time spent on manual data aggregation by 50%. Its intuitive interface led to higher user adoption rates and improved overall decision-making quality within the team. This project demonstrated robust frontend and backend development skills, as well as an understanding of data visualization principles.
+                </p>
+
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md">Live Demo</a>
+                    <a href="#" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-300 transition-colors duration-300 shadow-md">GitHub Repository</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 shadow-inner">
+        <div class="container mx-auto">
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.linkedin.com/in/andrew-burroughs114/" class="text-gray-400 hover:text-white transition-colors duration-300">LinkedIn</a>
+                <a href="https://github.com/andrewburroughs" class="text-gray-400 hover:text-white transition-colors duration-300">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
