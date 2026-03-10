@@ -40,22 +40,83 @@
                 <div class="lg:col-span-2 space-y-12">
                     <div>
                         <h2 class="text-2xl font-bold text-white mb-4">Project Overview</h2>
-                        <p class="leading-relaxed">The Aegis protocol was designed to solve the problem of failover latency in competitive robotics. When a primary flight computer (Jetson Orin Nano) experiences a hang or a ROS2 node crash, the backup (Jetson Nano) must take over the chassis control within 50ms to prevent collision.</p>
+                        <p class="leading-relaxed mb-4">
+                            The Aegis protocol was developed to provide resilient communication and rapid failover between redundant flight computers in autonomous robotics systems. The platform uses two onboard computers—a Jetson Orin Nano acting as the primary autonomy computer and a Jetson Nano serving as a hot standby controller. If the primary system experiences a crash, kernel hang, or ROS2 node failure, the backup computer must assume control of the drivetrain immediately to prevent loss of control or collision.
+                        </p>
+
+                        <p class="leading-relaxed">
+                            Aegis provides deterministic communication between the two computers using a lightweight UDP protocol optimized for low latency and minimal overhead. The system continuously synchronizes robot state, health metrics, and control authority so that the backup computer can take control within milliseconds without requiring system reinitialization.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">System Architecture</h2>
+                        <p class="leading-relaxed mb-4">
+                            The protocol operates across a dedicated internal Ethernet network connecting the two onboard computers and the robot's control systems. The primary flight computer performs perception, navigation, and planning while continuously publishing state updates to the backup computer. These updates include drivetrain commands, actuator states, sensor summaries, and fault conditions.
+                        </p>
+
+                        <p class="leading-relaxed">
+                            The backup computer mirrors the operational state of the robot but does not transmit commands unless a failure condition is detected. If the primary computer stops responding to heartbeat messages or reports a critical fault, control authority automatically transfers to the backup system. This architecture allows the robot to continue operating even if the primary autonomy stack fails.
+                        </p>
                     </div>
 
                     <div>
                         <h2 class="text-2xl font-bold text-white mb-4">Key Features</h2>
                         <ul class="space-y-4">
+
                             <li class="flex items-start">
                                 <span class="text-indigo-400 mr-2 mt-1">▹</span>
-                                <div><strong>Heartbeat Monitoring:</strong> 1000Hz health checks with sub-millisecond timeout detection.</div>
+                                <div>
+                                    <strong>High-Frequency Heartbeat Monitoring:</strong>
+                                    Continuous health monitoring at up to 100Hz allows the backup computer to detect system failure in under 10 milliseconds.
+                                </div>
                             </li>
+
                             <li class="flex items-start">
                                 <span class="text-indigo-400 mr-2 mt-1">▹</span>
-                                <div><strong>Differential State Updates:</strong> Only transmits changed bytes to minimize network overhead on the local switch.</div>
+                                <div>
+                                    <strong>Deterministic Failover:</strong>
+                                    The backup computer maintains synchronized drivetrain and actuator state so that it can immediately assume control without requiring ROS2 node startup or hardware reinitialization.
+                                </div>
                             </li>
+
+                            <li class="flex items-start">
+                                <span class="text-indigo-400 mr-2 mt-1">▹</span>
+                                <div>
+                                    <strong>Fault Detection and Reporting:</strong>
+                                    The protocol supports structured fault codes that allow subsystems to report hardware failures, communication errors, or safety violations.
+                                </div>
+                            </li>
+
+                            <li class="flex items-start">
+                                <span class="text-indigo-400 mr-2 mt-1">▹</span>
+                                <div>
+                                    <strong>Exclusive Control Authority:</strong>
+                                    AEGIS prevents split-brain behavior by dynamically enforcing which onboard computer is permitted to transmit motor commands, ensuring that only one controller can drive any actuator at a time.
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Protocol Design</h2>
+                        <p class="leading-relaxed mb-4">
+                            Aegis messages are transmitted over UDP using a lightweight binary packet format. Each packet contains a message identifier, timestamp, and compact payload representing a specific subsystem update. Message IDs categorize traffic into telemetry, configuration updates, fault reporting, and synchronization commands.
+                        </p>
+
+                        <p class="leading-relaxed">
+                            The protocol avoids the overhead of traditional middleware while still supporting structured communication between subsystems. This design allows the robotics platform to maintain extremely low latency even when operating under heavy sensor load or high-frequency control loops.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Real-World Application</h2>
+                        <p class="leading-relaxed">
+                            Aegis was designed for a lunar excavation rover competing in NASA's Lunabotics competition. The rover must operate autonomously in a harsh environment where system crashes or software faults could cause the robot to collide with obstacles or lose control of its drivetrain. By providing fast failover and continuous state synchronization between computers, Aegis ensures the robot remains controllable even during unexpected failures.
+                        </p>
+                    </div>
+
                 </div>
 
                 <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-2xl h-fit">
@@ -75,8 +136,8 @@
                         </div>
                     </div>
                     <div class="mt-8 space-y-3">
-                        <a href="#" class="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-lg font-semibold transition-colors">View on GitHub</a>
-                        <a href="#" class="block w-full text-center border border-slate-700 hover:bg-slate-800 py-3 rounded-lg font-semibold transition-colors">Documentation</a>
+                        <a href="https://github.com/Razorbotz/ROS2/tree/testing/shovel/src/communication" class="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-lg font-semibold transition-colors">View on GitHub</a>
+                        <a href="https://github.com/Razorbotz/ROS2/tree/testing/shovel/src/communication" class="block w-full text-center border border-slate-700 hover:bg-slate-800 py-3 rounded-lg font-semibold transition-colors">Documentation</a>
                     </div>
                 </div>
             </div>
@@ -84,7 +145,7 @@
     </main>
 
     <footer class="border-t border-slate-800 py-8 bg-slate-950 text-center">
-        <p class="text-slate-500 text-sm">&copy; 2026 Andrew Burroughs. Built with Tailwind CSS.</p>
+        <p class="text-slate-500 text-sm">&copy; 2026 Andrew Burroughs</p>
     </footer>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handheld Diagnostics | Andrew Burroughs</title>
+    <title>Handheld Diagnostics Tool | Project Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -11,155 +11,207 @@
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #cbd5e1; }
         .mono { font-family: 'Fira Code', monospace; }
         .hero-bg { background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%); }
-        .swiper-button-next, .swiper-button-prev { color: #818cf8 ! from-indigo-500; }
-        .swiper-pagination-bullet-active { background: #818cf8 !important; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 p-4">
+    <nav class="bg-slate-900 border-b border-slate-800 p-4">
         <div class="container mx-auto flex justify-between items-center">
             <a href="../index.html" class="text-xl font-bold mono tracking-tighter text-indigo-400">Andrew Burroughs</a>
             <div class="space-x-8 text-sm font-medium">
-                <a href="../index.html#projects" class="hover:text-indigo-400 transition-colors">← Back to Systems</a>
+                <a href="../projects.html" class="hover:text-indigo-400 transition-colors">← Back to Projects</a>
             </div>
         </div>
     </nav>
 
     <main class="flex-grow">
-        <section class="hero-bg py-20 px-6 border-b border-slate-800 text-center">
+        <section class="hero-bg py-20 px-6 border-b border-slate-800">
             <div class="container mx-auto max-w-4xl">
-                <div class="text-indigo-400 mono text-xs uppercase tracking-widest mb-4">Embedded Hardware / CAN Bus</div>
-                <h1 class="text-5xl font-extrabold text-white mb-6">Handheld Diagnostics Tool</h1>
-                <p class="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
-                    A zero-latency manual override and diagnostic bridge for the Razorbotz NASA Lunabotics platform.
+                <h1 class="text-5xl font-extrabold text-white mb-4">Handheld Diagnostics Tool</h1>
+                <p class="text-xl text-slate-400 mb-8">
+                    A portable CAN-based diagnostics and control tool for rapid robot inspection, local actuator testing, and field troubleshooting without requiring the main onboard computers.
                 </p>
-                <div class="flex flex-wrap justify-center gap-3">
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-1 bg-slate-800 border border-indigo-500/30 rounded-full text-xs mono text-indigo-300">C</span>
+                    <span class="px-4 py-1 bg-slate-800 border border-indigo-500/30 rounded-full text-xs mono text-indigo-300">LVGL</span>
                     <span class="px-4 py-1 bg-slate-800 border border-indigo-500/30 rounded-full text-xs mono text-indigo-300">ESP32-S3</span>
-                    <span class="px-4 py-1 bg-slate-800 border border-indigo-500/30 rounded-full text-xs mono text-indigo-300">LVGL (C)</span>
                     <span class="px-4 py-1 bg-slate-800 border border-indigo-500/30 rounded-full text-xs mono text-indigo-300">CAN Bus</span>
-                    <span class="px-4 py-1 bg-slate-800 border border-indigo-500/30 rounded-full text-xs mono text-indigo-300">Fusion360</span>
                 </div>
             </div>
         </section>
 
-        <section class="container mx-auto max-w-6xl px-6 py-16">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
-                
-                <div class="lg:col-span-2 space-y-16">
-                    <div class="swiper w-full rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide flex items-center justify-center p-4">
-                                <img src="../images/Diag_Front.JPG" class="max-h-[600px] w-auto rounded-lg" alt="Front View" />
-                            </div>
-                            <div class="swiper-slide flex items-center justify-center p-4">
-                                <img src="../images/Diag_Back.JPG" class="max-h-[600px] w-auto rounded-lg" alt="Internal View" />
-                            </div>
-                            <div class="swiper-slide flex items-center justify-center p-4">
-                                <img src="../images/Diag_Controls.jpeg" class="max-h-[600px] w-auto rounded-lg" alt="UI Layout" />
-                            </div>
-                            <div class="swiper-slide flex items-center justify-center p-4">
-                                <img src="../images/CAD_Back.png" class="max-h-[600px] w-auto rounded-lg" alt="UI Layout" />
-                            </div>
-                            <div class="swiper-slide flex items-center justify-center p-4">
-                                <img src="../images/CAD_Logo.png" class="max-h-[600px] w-auto rounded-lg" alt="UI Layout" />
-                            </div>
-                            <div class="swiper-slide p-4">
-                                <video controls class="w-full max-h-[600px] rounded-lg">
-                                    <source src="../images/Diag_Video.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
+        <section class="container mx-auto max-w-4xl px-6 py-12">
+            <div class="swiper rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/50 shadow-lg">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex items-center justify-center bg-slate-950 p-6">
+                        <img src="../images/Diag_Front.JPG" class="max-h-[700px] w-auto object-contain rounded-xl" alt="Diagnostics Tool Front" />
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center bg-slate-950 p-6">
+                        <img src="../images/Diag_Back.JPG" class="max-h-[700px] w-auto object-contain rounded-xl" alt="Diagnostics Tool Back" />
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center bg-slate-950 p-6">
+                        <img src="../images/Diag_Controls.jpeg" class="max-h-[700px] w-full object-contain rounded-xl" alt="Diagnostics Controls" />
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center bg-slate-950 p-6">
+                        <video controls class="max-h-[700px] w-full object-contain rounded-xl">
+                            <source src="../images/Diag_Video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next text-indigo-400"></div>
+                <div class="swiper-button-prev text-indigo-400"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="container mx-auto max-w-4xl px-6 pb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-12">
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Project Overview</h2>
+                        <p class="leading-relaxed mb-4">
+                            This handheld diagnostics tool was developed for the Arkansas Razorbotz lunar excavation robot used in NASA Lunabotics. During competition, operators are separated from the arena and must rely on ground crew to perform final inspections and last-minute troubleshooting during a short setup window. Because the onboard computers required significant boot and network initialization time, diagnosing faults during that period was difficult and often impractical.
+                        </p>
+                        <p class="leading-relaxed">
+                            To solve that problem, I designed a self-contained handheld tool that could directly interface with the robot over CAN bus, allowing the team to command subsystems, inspect telemetry, and identify hardware faults without waiting for the full onboard autonomy stack to come online. This reduced the time required to begin diagnostics from well over a minute to nearly instantaneous local access.
+                        </p>
                     </div>
 
                     <div>
-                        <h2 class="text-3xl font-bold text-white mb-6">The Problem: Fatal Boot Latency</h2>
-                        <p class="text-lg leading-relaxed text-slate-400 mb-6">
-                            In the NASA Lunabotics competition, every second of the 5-minute setup phase is critical. Last year, we faced a catastrophic failure: a linear actuator on the bucket failed, but because our onboard computers take **1.5 minutes to boot and sync to the network**, we ran out of time to diagnose the issue before our run began.
+                        <h2 class="text-2xl font-bold text-white mb-4">System Design</h2>
+                        <p class="leading-relaxed mb-4">
+                            The device is built around a Waveshare ESP32-S3 Touch, which includes an integrated CAN interface and enough compute capability to drive a responsive embedded graphical interface. The system communicates directly with the robot’s Talon SRX and Talon FX motor controllers, allowing operators to test the drivetrain, excavation arm, and bucket subsystems independently of the robot’s main computers.
                         </p>
-                        <div class="bg-slate-900 border-l-4 border-indigo-500 p-6 rounded-r-xl">
-                            <p class="text-white italic">"We needed a solution that bypasses the high-level OS and talks directly to the hardware in under 1 second."</p>
-                        </div>
+                        <p class="leading-relaxed">
+                            I developed the interface using LVGL and implemented the control and telemetry handling logic in C. The tool provides direct command input, live data monitoring, and subsystem-level diagnostics in a format that can be used quickly by operators and ground crew under time pressure.
+                        </p>
                     </div>
 
                     <div>
-                        <h2 class="text-3xl font-bold text-white mb-6">The Solution: Custom CAN Bridge</h2>
-                        <p class="text-lg leading-relaxed text-slate-400">
-                            I developed a handheld tool using an **ESP32-S3 Touch** with an integrated CAN transceiver. This device allows ground crew to drive the drivetrain, excavation arm, and bucket directly via the CAN bus, bypassing the primary Jetson computer entirely during the setup phase.
-                        </p>
-                        
-                    </div>
-
-                    <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-2xl">
-                        <h2 class="text-2xl font-bold text-white mb-4">Reverse Engineering the API</h2>
-                        <p class="text-slate-400 leading-relaxed mb-4">
-                            The primary challenge was controlling the <strong>TalonSRX and TalonFX motor controllers</strong>. Since the manufacturer (CTRE) does not publicly document their CAN API, I used the <code>candump</code> utility on Linux to intercept messages sent by their official software.
-                        </p>
-                        <ul class="space-y-3 mono text-sm text-indigo-300">
-                            <li>▹ Captured known speed values to decode motor command frames.</li>
-                            <li>▹ Parsed returning telemetry frames to graph real-time current draw and position.</li>
-                            <li>▹ Implemented the protocol in pure C for the ESP32 firmware.</li>
+                        <h2 class="text-2xl font-bold text-white mb-4">Key Features</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-indigo-400 mr-2 mt-1">▹</span>
+                                <div>
+                                    <strong>Direct CAN Control:</strong>
+                                    Sends motor control commands directly over CAN bus, allowing local actuation testing without requiring the robot’s primary compute system or wireless network.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-400 mr-2 mt-1">▹</span>
+                                <div>
+                                    <strong>Live Telemetry Display:</strong>
+                                    Reads and parses returning motor controller telemetry in real time to display position, velocity, current, and system status.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-400 mr-2 mt-1">▹</span>
+                                <div>
+                                    <strong>Subsystem Diagnostics:</strong>
+                                    Enables fast isolation of faults in the drivetrain, excavation arm, and bucket mechanisms during pre-run inspection and repair.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-400 mr-2 mt-1">▹</span>
+                                <div>
+                                    <strong>Embedded Data Visualization:</strong>
+                                    Displays parsed values and graphs motor data locally on the device for quick operator interpretation.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-400 mr-2 mt-1">▹</span>
+                                <div>
+                                    <strong>Custom Enclosure Design:</strong>
+                                    Includes a purpose-built 3D-printed housing designed in Fusion 360 around the electronics and battery system for durable field use.
+                                </div>
+                            </li>
                         </ul>
                     </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Challenges & Solutions</h2>
+                        <p class="leading-relaxed mb-4">
+                            One of the most technically challenging parts of this project was communicating with CTRE Talon motor controllers at the CAN message level. Official documentation for low-level message formats was limited, and the available public resources were incomplete and based on older firmware revisions.
+                        </p>
+                        <p class="leading-relaxed">
+                            To overcome this, I reverse engineered the command and telemetry packets by issuing known motor commands, capturing CAN traffic with Linux tools such as <span class="mono text-slate-300">candump</span>, and correlating the observed message patterns with expected controller behavior. This allowed me to reconstruct the packet structure needed both to command the motors and to decode the returning telemetry reliably.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Mechanical Design</h2>
+                        <p class="leading-relaxed mb-4">
+                            This project also required mechanical design work. Before building this tool, I had very little experience with CAD, so I taught myself Fusion 360 in order to create a compact enclosure around the ESP32-S3 board and the 18650 battery pack.
+                        </p>
+                        <p class="leading-relaxed">
+                            The resulting housing was designed for clean assembly, secure fitment, and portability in the field. The final tolerances were accurate enough that the electronics slid into place and locked securely inside the enclosure.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Outcome</h2>
+                        <p class="leading-relaxed">
+                            The handheld diagnostics tool successfully provided direct local control and fault inspection for the robot, dramatically reducing the time needed to begin troubleshooting from roughly 100 seconds to under a second. It also improved field readiness by allowing ground crew to verify subsystem functionality before a run without depending on the full onboard software stack. The interface proved intuitive enough for rapid adoption, and the tool became a practical asset for both diagnostics and operations support.
+                        </p>
+                    </div>
+
                 </div>
 
-                <div class="space-y-8">
-                    <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl sticky top-24">
-                        <h3 class="text-white font-bold mb-6 uppercase text-sm tracking-widest">Technical Specs</h3>
-                        
-                        <div class="space-y-6">
-                            <div>
-                                <span class="block text-slate-500 text-xs uppercase mb-2">Microcontroller</span>
-                                <span class="text-white font-medium">Waveshare ESP32-S3 Touch</span>
-                            </div>
-                            <div>
-                                <span class="block text-slate-500 text-xs uppercase mb-2">UI Framework</span>
-                                <span class="text-white font-medium">LVGL (C-based Graphics)</span>
-                            </div>
-                            <div>
-                                <span class="block text-slate-500 text-xs uppercase mb-2">Protocol</span>
-                                <span class="text-white font-medium">CAN 2.0B / Reverse Engineered</span>
-                            </div>
-                            <div>
-                                <span class="block text-slate-500 text-xs uppercase mb-2">Mechanical</span>
-                                <span class="text-white font-medium">Fusion360 Design / PLA 3D Print</span>
-                            </div>
+                <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-2xl h-fit">
+                    <h3 class="text-white font-bold mb-6">Tech Stack</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500">Frontend</span>
+                            <span class="text-white mono">LVGL</span>
                         </div>
-
-                        <div class="mt-10 pt-8 border-t border-slate-800">
-                            <h3 class="text-white font-bold mb-4">Project Impact</h3>
-                            <div class="flex items-center justify-between py-2">
-                                <span class="text-slate-400">Diag Time</span>
-                                <span class="text-emerald-400 font-bold">-99%</span>
-                            </div>
-                            <div class="flex items-center justify-between py-2">
-                                <span class="text-slate-400">Boot Delay</span>
-                                <span class="text-emerald-400 font-bold">0s</span>
-                            </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500">Language</span>
+                            <span class="text-white mono">C</span>
                         </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500">Controller</span>
+                            <span class="text-white mono">ESP32-S3 Touch</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500">Interface</span>
+                            <span class="text-white mono">CAN Bus</span>
+                        </div>
+                        <div class="flex justify-between pb-2">
+                            <span class="text-slate-500">CAD</span>
+                            <span class="text-white mono">Fusion 360</span>
+                        </div>
+                    </div>
 
-                        <a href="#" class="mt-8 block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-lg font-semibold transition-colors">
-                            View on GitHub
-                        </a>
+                    <div class="mt-8 space-y-3">
+                        <a href="#" class="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-lg font-semibold transition-colors"><div class="block w-full text-center border border-slate-700 text-slate-400 py-3 rounded-lg font-semibold cursor-default">Source Code Available Upon Request</div></a>
                     </div>
                 </div>
+            </div>
 
+            <div class="mt-16">
+                <img src="../images/Robot_2024.png" class="w-full rounded-2xl border border-slate-800 shadow-lg" alt="Arkansas Razorbotz Robot 2024" />
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-slate-800 py-12 bg-slate-950 text-center">
-        <p class="mono text-slate-500 text-sm">&copy; 2026 Andrew Burroughs</p>
+    <footer class="border-t border-slate-800 py-8 bg-slate-950 text-center">
+        <p class="text-slate-500 text-sm">&copy; 2026 Andrew Burroughs</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
             loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
         });
     </script>
 </body>
